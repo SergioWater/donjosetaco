@@ -1,0 +1,12 @@
+---
+export const prerender=true;
+import Layout from '../../layouts/Layout.astro';
+import CategoryNav from '../../components/CategoryNav.astro';
+import MediaGrid from '../../components/MediaGrid.astro';
+import {MEDIA_CATEGORIES} from '../../data/categories';
+import {loadCategory} from '../../lib/media';
+export function getStaticPaths(){return MEDIA_CATEGORIES.map(category=>({params:{category:category.slug},props:{definition:category}}));}
+const category=loadCategory(Astro.props.definition);
+---
+<Layout title={category.title} description={category.description}><div class="page"><p class="eyebrow">DON JOSE TACOS · PHOTOS</p><h1>{category.title}</h1><p class="lede">{category.description}</p><CategoryNav current={category.slug}/><MediaGrid items={category.items}/><div class="actions"><a class="button" href="/menu">Full menu ↗</a><a class="button secondary" href="/order">Order by phone</a></div></div></Layout>
+

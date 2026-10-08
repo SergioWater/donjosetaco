@@ -1,0 +1,47 @@
+---
+import { MEDIA_CATEGORIES } from "../data/categories";
+
+interface Props {
+  current?: string;
+}
+
+const { current } = Astro.props;
+---
+
+<nav class="tabs" aria-label="Media categories">
+  <a href="/gallery" aria-current={current ? undefined : "page"}>All</a>
+  {
+    MEDIA_CATEGORIES.map((category) => (
+      <a
+        href={`/gallery/${category.slug}`}
+        aria-current={current === category.slug ? "page" : undefined}
+      >
+        {category.title}
+      </a>
+    ))
+  }
+</nav>
+
+<style>
+  .tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1.5rem 0 2rem;
+  }
+
+  a {
+    text-decoration: none;
+    padding: 0.45rem 0.9rem;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: var(--card);
+    font-weight: 500;
+  }
+
+  a[aria-current="page"] {
+    background: var(--bg);
+    color: var(--paper);
+    border-color: var(--bg);
+  }
+</style>

@@ -1,0 +1,25 @@
+{
+  "tool": "Built-in image_gen",
+  "assets": [
+    {
+      "file": "public/images/shrimp-taco-ai.webp",
+      "source": "public/media/tacos/Screenshot 2026-10-08 105840.png",
+      "prompt": "Use case: precise-object-edit. Asset type: restaurant website hero food photograph, landscape 3:2 composition. Edit target: the supplied Don Jose Tacos shrimp taco photo. Recreate it as clean professional editorial food photography. Preserve its recognizable grilled corn tortilla, browned melted cheese, plump grilled shrimp, diced tomato, white onion, cilantro and crema; no additional fillings. Remove the hand and distracting background; set the same taco naturally on red-and-white checked food paper on a dark forest-green table, with warm natural side lighting, crisp realistic detail and soft background. One taco close-up, appetizing and honest to reference, subtle negative space around subject. No text, logos or watermarks."
+    },
+    {
+      "file": "public/images/menu-clean-ai.webp",
+      "source": "public/media/menu/Screenshot 2026-10-07 182721.png",
+      "prompt": "Use case: text-localization and style-transfer. Asset type: clean restaurant menu poster for Don Jose Tacos website, portrait 2:3. Input image: photographed menu board as source for dish names and brand color reference, recreate as flat print-ready menu artwork, remove truck metal, glare, perspective, handwriting, social icons, original unrelated contact number and all prices because photos have conflicting prices. Deep forest green background, warm ivory clean readable typography, orange-red headers, thin yellow rules; restrained Mexican taqueria styling. Exact text, no other text: 'DON JOSE TACOS' / 'EL MENÚ' / 'TACOS' / 'Tacos de Camarón — Shrimp tacos' / 'Tacos' / 'Asada · Pastor · Cabeza · Chorizo · Tripa · Vegetariana' / 'BURRITOS' / 'Burrito' / 'Burrito Super — Avocado & sour cream' / 'QUESADILLAS & MULITAS' / 'Quesadilla de Camarón' / 'Quesadilla de Harina' / 'Quesadilla de Maíz' / 'Flor de calabaza · Huitlacoche · Chicharrón prensado' / 'Mulitas' / 'BEBIDAS' / 'Sodas Mexicanas · Sodas de Lata' / 'CALL TO ORDER' / '(669) 301-6355' / 'Call for current prices & availability'. Strong spacing, large headings, carefully spelled all text, no prices, no hours, no invented claims. This is a clean menu redesign rather than recreation of the photographed background."
+    },
+    {
+      "file": "public/images/quesadilla-ai.webp",
+      "source": "public/media/tacos/Screenshot 2026-10-08 105913.png",
+      "prompt": "Use case: lighting-weather and precise-object-edit. Asset type: clean food photograph for restaurant website, landscape 3:2. Edit target: uploaded quesadilla photograph. Recreate this exact recognizable corn tortilla quesadilla with melted cheese and the same dark huitlacoche-like filling as pictured, same red basket, red-white checked paper, grilled onion and lime wedge. Improve professional food styling, sharpness and warm natural illumination; remove screenshot borders and awkward crop, clean forest green table backdrop, preserve ingredients and portion, no new toppings, no text, no logos, no watermark. A realistic close overhead three-quarter food photo."
+    },
+    {
+      "file": "public/images/don-jose-logo-ai.webp",
+      "source": "public/images/menu-clean-ai.png",
+      "prompt": "Use case: background-extraction. Edit target: supplied menu artwork. Extract ONLY the complete Don Jose Tacos logo in the upper-left corner: smiling cartoon boy mascot with black spiky hair, raised hands, blue clothing and yellow rays, plus the cream orange-outlined script 'Don José' and 'TACOS' beneath. Preserve exactly the existing mascot identity, facial expression, lettering, proportions, blue/cream/orange/red/yellow colors and outlines. Remove all green background and every other menu element. True transparent background with clean antialiased edges, no square background, no shadow rectangle. Center the complete logo with minimal transparent padding as a single high-resolution isolated logo asset for a website navbar. No redesign, no added text, no extra characters or decorations beyond the source logo."
+    }
+  ]
+}

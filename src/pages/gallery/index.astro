@@ -1,0 +1,10 @@
+---
+export const prerender=true;
+import Layout from '../../layouts/Layout.astro';
+import CategoryNav from '../../components/CategoryNav.astro';
+import MediaGrid from '../../components/MediaGrid.astro';
+import {loadAllCategories} from '../../lib/media';
+const categories=loadAllCategories();
+---
+<Layout title="Photos — Shrimp Tacos & Our Menu" description="Explore Don Jose Tacos shrimp tacos, quesadillas, and our full menu."><div class="page"><p class="eyebrow">A CLOSER LOOK</p><h1>Good food.<br/>Great cravings.</h1><p class="lede">Meet our signature tacos de camarón and explore the menu.</p><CategoryNav/>{categories.map(category=><section class="photo-section"><div class="section-top"><h2>{category.title}</h2><a class="text-link" href={category.slug==='menu'?'/menu':'/gallery/'+category.slug}>{category.slug==='menu'?'Explore the full menu':'View photos'} ↗</a></div><MediaGrid items={category.items}/></section>)}</div></Layout>
+<style>.photo-section{margin:3rem 0}</style>

@@ -1,0 +1,90 @@
+---
+import type { LoadedCategory } from "../lib/media";
+
+interface Props {
+  category: LoadedCategory;
+}
+
+const { category } = Astro.props;
+const countLabel =
+  category.items.length === 0
+    ? "Photos coming soon"
+    : `${category.items.length} ${category.items.length === 1 ? "item" : "items"}`;
+---
+
+<a class="card" href={`/gallery/${category.slug}`}>
+  <div class="cover">
+    {
+      category.cover ? (
+        <img src={category.cover} alt="" loading="lazy" decoding="async" />
+      ) : (
+        <span class="placeholder">{category.title}</span>
+      )
+    }
+  </div>
+  <div class="body">
+    <h2>{category.title}</h2>
+    <p>{category.description}</p>
+    <span class="count">{countLabel}</span>
+  </div>
+</a>
+
+<style>
+  .card {
+    display: grid;
+    grid-template-rows: 180px auto;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    min-height: 100%;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(26, 16, 12, 0.12);
+  }
+
+  .cover {
+    background: var(--bg);
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+  }
+
+  .cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .placeholder {
+    color: var(--gold);
+    font-family: Fraunces, Georgia, serif;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .body {
+    padding: 1.1rem 1.2rem 1.25rem;
+  }
+
+  h2 {
+    font-size: 1.35rem;
+    margin-bottom: 0.35rem;
+  }
+
+  p {
+    margin: 0 0 0.85rem;
+    color: var(--muted);
+  }
+
+  .count {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--chile);
+  }
+</style>
